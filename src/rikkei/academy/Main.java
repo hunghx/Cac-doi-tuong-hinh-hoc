@@ -5,11 +5,11 @@ public class Main {
 //Kiểm thử Class Shape
         System.out.println("-------- - SHAPE----------");
 
-        Shape shape = new Shape();
-        System.out.println(shape);
-
-        shape = new Shape("red", false);
-        System.out.println(shape);
+//        Shape shape = new Shape();
+//        System.out.println(shape);
+//
+//        shape = new Shape("red", false);
+//        System.out.println(shape);
 
 //kiểm thử Class Circle
         System.out.println("-------- - CIRCLE----------");
@@ -43,6 +43,27 @@ public class Main {
 
         square = new Square(5.8, "yellow", true);
         System.out.println(square);
+
+
+//         Tạo 1 mảng các đối tượng hình học, ít nhất 1 square
+        Shape[] array = {square,rectangle,circle};
+
+        for (Shape s:array) {
+            // hiển thị diện tích
+            System.out.println("Diện tích hình học : "+ s.getArea());
+            if(s instanceof  Colorable){
+                 ((Colorable) s).howToColor();
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            Shape s = array[i];
+            System.out.println("Diện tích hình học : "+ s.getArea());
+            if(s instanceof  Colorable){
+                ((Colorable) s).howToColor();
+            }
+        }
+
 
     }
 }
